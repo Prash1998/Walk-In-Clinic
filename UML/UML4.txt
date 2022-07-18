@@ -1,0 +1,466 @@
+class Person
+{
+  firstName;
+  lastName;
+  userName;
+  role;
+  
+  1 -- 0..1 WelcomeWindow;
+  1 -- 0..1 RegistrationWindow;
+
+  public String toString(){}
+  public String getUsername(){}
+  public String getFirstname(){}
+  public String getLastname(){}
+  public String getrole(){}
+}
+
+class WelcomeWindow{
+  
+  FirebaseAuth mAuth;
+  FirebaseUser mUser;
+  DatabaseReference mDatabase;
+  TextView firstNameTextView;
+  TextView roleTextView;
+  Button userSignOut;
+  
+  protected void onCreate(Bundle savedInstanceState){}
+    public void onClick(View view) {}
+  }
+
+
+class RegistrationWindow
+{
+  FireBaseAuth mAuth;
+  FirebaseAuth mAuth2;
+  FirebaseDatabase mDataBase;
+  DatabaseReference myRef;
+  FirebaseUser mUser;
+  DatabaseReference mDatabase2;
+  EditText editTextUserName;
+  EditText editTextPassword;
+  EditText editTextFirstName;
+  EditText editTextLastName;
+  EditText editTextConfirmation;
+  EditText editTextUserRole;
+  
+  protected void onCreate(Bundle savedInstanceState){}
+  private void registerUser() {}
+  public void onClick(View view) {}
+}
+
+class MainActivity
+{
+  EditText UserName;
+  EditText Password;
+  FireBaseAuth firebaseAuth;
+
+  0..1 -- 1 Person;
+  1 <@>- 1 ClinicServiceScreen;
+  
+  public void checkLogin(View view) {}
+  protected void onCreate(Bundle savedInstanceState) {}
+  public void onClick(View view) {}
+}
+
+class AdminScreen{
+  
+  mAuth FireBaseAuth;
+  FirebaseUser mUser;
+  DatabaseReference mDatabase;
+  
+  1 -- * Service;
+  1 -- * EditService;
+  1 -- * DeleteService;
+  1 -- * RemoveAcount;
+  
+  protected void onCreate(Bundle savedInstanceState) {}
+  public void deleteAccount(){}
+  public void onClick(View view) {}
+}
+
+class Service{
+  
+  serviceName;
+  roleName;
+  
+  public void onClick(View view) {}
+  public String getserviceName(){}
+  public String getroleName(){}
+  public String toString(){}
+}
+
+class DeleteService{
+  
+  FirebaseDatabase mDataBase;
+  DatabaseReference myRef;
+  EditText EditTextDeleteServiceName;
+  
+  protected void onCreate(Bundle savedInstanceState){}
+  private void deleteService() {}
+  public void onClick(View v){}
+}
+
+class EditService{
+  
+  FirebaseDatabase mDataBase;
+  DatabaseReference myRef;
+  EditText EditTextOldServiceName;
+  EditText EditTextNewServiceName;
+  EditText EditTextNewRoleName;
+  
+  protected void onCreate(Bundle savedInstanceState){}
+  private void replaceOldService() {}
+  private void addNewService() {}
+  private void editService() {}
+  public void onClick(View v){}
+}
+
+class AddService{
+  * -- 1 AdminScreen;
+  
+  FirebaseDatabase mDataBase;
+  DatabaseReference myRef;
+  EditText EditTextServiceName;
+  EditText EditTextRoleName;
+  
+  private void addService() {}
+  public void onClick(View v){}
+  protected void onCreate(Bundle savedInstanceState){}
+}
+
+class RemoveAcount{
+  FirebaseAuth mAuth;
+  FirebaseDatabase mDatabase;
+  DatabaseReference myRef;
+  FirebaseUser firebaseUser;
+  
+  protected void onCreate(Bundle savedInstanceState){}
+  private void removeUser(){}  
+  public void onClick(View v) {}  
+}
+
+
+association {
+  1 MainActivity <@>- 1 RegistrationWindow;
+}
+
+
+association {
+  1 MainActivity <@>- 1 WelcomeWindow;
+}
+
+
+association{
+  1 RegistrationWindow -> 1 WelcomeWindow;
+}
+
+
+association{
+  1 MainActivity <@>- 1 AdminScreen;
+}
+
+association{
+  1 RegistrationWindow -> 1 EmployeeScreen;
+}
+
+//////////////////////dev 3/////////////////////////
+
+class EmployeeScreen{
+  0..1 -- 1 Person;
+  1  -<@> 1 MainActivity;
+  1 -> 1 ClinicServiceScreen;
+  1 -> 1 ProfileInformation;
+
+  FirebaseAuth mAuth;
+  FirebaseUser mUser;
+  DatabaseReference mDatabase;
+  TextView firstNameTextView;
+
+  protected void onCreate(Bundle savedInstanceState) {}
+  public void onClick(View v){}
+}
+
+
+class ClinicServiceScreen{
+  1 -- 0..1 Clinic;
+  1 -- * DeleteServiceFromProfile;
+  1 -- 1 ListOfHours;
+  1 -- 1 ProfileInformation;
+
+  FirebaseAuth mAuth;
+  FirebaseUser mUser;
+  DatabaseReference myRef;
+  TextView ClinicNameTextView;
+
+  protected void onCreate(Bundle savedInstanceState) {}
+  public void onClick(View v){}
+}
+
+class Clinic{
+  Info info;
+  Hours day;
+  Service service;
+
+  * -- 1 ListOfClinics;
+public Info getInfo(){}
+public Hours getHours(){}
+public Service getService{}
+}
+
+
+class ClinicHours{
+  1 -- * ClinicServiceScreen;
+  * <- 1 WeeklySchedule;
+  * <- 7 Hours;
+  * -- 1 ListOfHours;
+
+  EditText[] startTimesFields, 
+  EditText[] endTimesFields;
+  String[] startTimes;
+  String[] endTimes;
+  WeeklySchedule workHours;
+
+  protected void onCreate(Bundle savedInstanceState){}
+  public void addHours(){}
+  public boolean inputChecker(){}
+  public boolean formatChecker(String time){}
+  public boolean pairCheck(String start, String end){}
+  public boolean allPairsCheck(){}
+  public boolean formatCheckAll(){}
+  public void onClick(View v){}
+}
+
+class ListOfHours{
+  FirebaseAuth mAuth;
+  FirebaseUser mUser;
+  DatabaseReference mDatabase;
+  TextView openTime1;
+  TextView openTime2;
+  TextView openTime3;
+  TextView openTime4;
+  TextView openTime5;
+  TextView openTime6;
+  TextView openTime7;
+  TextView closeTime1;
+  TextView closeTime2;
+  TextView closeTime3;
+  TextView closeTime4;
+  TextView closeTime5;
+  TextView closeTime6;
+  TextView closeTime7;
+  Button userCancel;
+
+  protected void onCreate(Bundle savedInstanceState) {}
+  public void onClick(View v){}
+}
+
+class ProfileInformation{
+  FirebaseAuth mAuth;
+  DatabaseReference myRef;
+  EditText editTextClinicName;
+  EditText editTextAddress;
+  EditText editTextPhoneNumber;
+  
+  protected void onCreate(Bundle savedInstanceState) {}
+  private void createClinic() {}
+  public void onClick(View v){}
+  
+}
+
+class AddServiceToProfile{
+  * -- 1 ClinicServiceScreen;
+
+  DatabaseReference mRef;
+  FirebaseUser mUser;
+  FirebaseAuth mAuth;
+  EditText AddService;
+
+  protected void onCreate(Bundle savedInstanceState) {}
+  protected void addToProfile()
+  public void onClick(View v) {}
+}
+
+class DeleteServiceFromProfile{
+  DatabaseReference mRef;
+  FirebaseUser mUser;
+  FirebaseAuth mAuth;
+  EditText deleteService;
+
+  protected void onCreate(Bundle savedInstanceState) {}
+  protected void deleteFromProfile(){}
+  public void onClick(View v) {}
+}
+
+
+class Info{
+  1 -> * ProfileInformation;
+
+  String name;
+  String address;
+  String phoneNumber;
+  String userID;
+  
+  public Info(){}
+public String getAddress(){}
+public String getName(){}
+public String getPhoneNumber(){}
+}
+
+class Hours{
+  7 -> 1 WeeklySchedule;
+
+  String open;
+  String closed;
+}
+
+class WeeklySchedule{
+  Hours mon;
+  Hours tue;
+  Hours wed;
+  Hours thur;
+  Hours fri;
+  Hours sat;
+  Hours sun;
+}
+
+class feedback{
+
+double rating;
+int numberOfReviews;
+
+public Feedback(double rating, int numberOfReviewers){}
+public Feedback(){}
+public double getRating(){}
+public int getNumberOfReviewers(){}
+
+}
+
+class ClinicSearch{
+
+EditText editTextClinicName;
+DatabaseReference myRef;
+String uid;
+
+  1 -- 1 PatientClinic;
+protected void onCreate(Bundle savedInstanceState){}
+private void searchforClinic(){}
+private void startTheActivity(String uid){}
+public voidnClick(View v){}
+
+}
+
+
+class ListOfClinics{
+
+ListView list;
+FirebaseDatabase database;
+Database ref;
+ArrayList<String> listOfClinics;
+ArrayAdpter<String> adapter;
+
+  1 -- * PatientClinic;
+  1 -- 1 searchByProvidedServices;
+    1 -- 1 searchByHours;
+protected void onCreate(Bundle savedInstanceState){}
+
+
+
+}
+
+
+class PatientClinic{
+
+FirebaseAuth mAuth;
+FirebaseUser mUser;
+DatabaseReference mInitialRef;
+DatabaseReference mRef;
+DatabaseReference mRef1;
+DatabaseReference mRef2;
+TextView clinicName;
+TextView waitTimeHoursTextView;
+TextView waitTimeMinsTextView;
+TextView clinic_rating;
+String uid;
+
+  1 -- 1 WaitTimes;
+  1 -- 1 searchByAddress;
+  1 -- * feedback;
+  1 -- 1 Rating;
+protected void onCreate(Bundle savedInstanceState){}
+private void startTheActivity(){}
+private void checkingIn(){}
+private void updateWaitingTimes(WaitTimes waitTimes){}
+public void onClick(View v){}
+
+}
+
+
+class Rating{
+
+FirebaseAuth mAuth;
+FirebaseUser mUser;
+DatabaseReference myRef;
+
+TextView clinicName;
+EditText ratingEditText;
+String rating;
+String uid;
+
+protected void onCreate(Bundle savedInstanceState){}
+private void rate(){}
+public void onClick(View v){}
+
+}
+
+class searchByAddress{
+
+DatabaseReference myRef;
+EditText search;
+String uid;
+
+protected void onCreate(Bundle savedInstanceState){}
+private void searchAddress(){}
+private void StartTheActivity(String uid){}
+public void onClick(View v){}
+
+}
+
+class searchByHours{
+
+DatabaseReference myRef;
+EditText search;
+
+protected void onCreate(Bundle savedInstanceState){}
+public void onClick(View v){}
+
+}
+
+class searchByProvidedServices{
+
+DatabaseReference mRef;
+Query query;
+Query query2;
+Query query3;
+EditText editTextSearchName;
+
+protected void onCreate(Bundle savedInstanceState){}
+public void onClick(View v){}
+
+}
+
+class WaitTimes{
+int numPeopleWaiting;
+int waitTimeTotal;
+int waitTimeHours;
+int waitTimeMins;
+
+public WaitTimes(){}
+public int getNumPeopleWaiting() {}
+public int getWaitTimeTotal(){}
+public int getWaitTimeHours(){}
+public int getWaitTimeMins(){}
+public void increaseNumPeople(){}
+public void updateWaitTime(){}
+public void getHoursandMins(){}
+}

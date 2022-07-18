@@ -1,0 +1,376 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#54B3E5FC"
+    tools:context=".EmployeeHours">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="70dp" />
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Clinic Hours"
+            android:textAllCaps="true"
+            android:textColor="#E21F83B1"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="50dp" />
+
+
+        <LinearLayout
+            android:id="@+id/monSlot"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/myMon"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="Monday" />
+
+            <TextView
+                android:id="@+id/from1"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:text="From : " />
+
+            <TextView
+                android:id="@+id/myStartTime1"
+                android:layout_width="70dp"
+                android:layout_height="wrap_content"
+                android:text="0:00" />
+
+
+            <TextView
+                android:id="@+id/until1"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Until : " />
+
+            <TextView
+                android:id="@+id/myEndTime1"
+                android:layout_width="70dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="0:00" />
+
+        </LinearLayout>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="30dp" />
+
+        <LinearLayout
+            android:id="@+id/tuesSlot"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/myTues"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="Tuesday" />
+
+            <TextView
+                android:id="@+id/from2"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:text="From : " />
+
+            <TextView
+                android:id="@+id/myStartTime2"
+                android:layout_width="70dp"
+                android:layout_height="wrap_content"
+                android:text="0:00" />
+
+
+            <TextView
+                android:id="@+id/until2"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Until : " />
+
+            <TextView
+                android:id="@+id/myEndTime2"
+                android:layout_width="70dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="0:00" />
+
+        </LinearLayout>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="30dp" />
+
+        <LinearLayout
+            android:id="@+id/wedSlot"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/myWed"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="Wednesday" />
+
+            <TextView
+                android:id="@+id/from3"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:text="From : " />
+
+            <TextView
+                android:id="@+id/myStartTime3"
+                android:layout_width="70dp"
+                android:layout_height="wrap_content"
+                android:text="0:00" />
+
+
+            <TextView
+                android:id="@+id/until3"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Until : " />
+
+            <TextView
+                android:id="@+id/myEndTime3"
+                android:layout_width="70dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="0:00" />
+
+        </LinearLayout>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="30dp" />
+
+        <LinearLayout
+            android:id="@+id/thursSlot"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/myThurs"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="Thursday" />
+
+            <TextView
+                android:id="@+id/from4"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:text="From : " />
+
+            <TextView
+                android:id="@+id/myStartTime4"
+                android:layout_width="70dp"
+                android:layout_height="wrap_content"
+                android:text="0:00" />
+
+
+            <TextView
+                android:id="@+id/until4"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Until : " />
+
+            <TextView
+                android:id="@+id/myEndTime4"
+                android:layout_width="70dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="0:00" />
+
+        </LinearLayout>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="30dp" />
+
+        <LinearLayout
+            android:id="@+id/friSlot"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/myFri"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="Friday" />
+
+            <TextView
+                android:id="@+id/from5"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:text="From : " />
+
+            <TextView
+                android:id="@+id/myStartTime5"
+                android:layout_width="70dp"
+                android:layout_height="wrap_content"
+                android:text="0:00" />
+
+
+            <TextView
+                android:id="@+id/until5"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Until : " />
+
+            <TextView
+                android:id="@+id/myEndTime5"
+                android:layout_width="70dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="0:00" />
+
+        </LinearLayout>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="30dp" />
+
+        <LinearLayout
+            android:id="@+id/satSlot"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/mySat"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="Saturday" />
+
+            <TextView
+                android:id="@+id/from6"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:text="From : " />
+
+            <TextView
+                android:id="@+id/myStartTime6"
+                android:layout_width="70dp"
+                android:layout_height="wrap_content"
+                android:text="0:00" />
+
+
+            <TextView
+                android:id="@+id/until6"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Until : " />
+
+            <TextView
+                android:id="@+id/myEndTime6"
+                android:layout_width="70dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="0:00" />
+
+        </LinearLayout>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="30dp" />
+
+        <LinearLayout
+            android:id="@+id/sunSlot"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/mySun"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="Sunday" />
+
+            <TextView
+                android:id="@+id/from7"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:text="From : " />
+
+            <TextView
+                android:id="@+id/myStartTime7"
+                android:layout_width="70dp"
+                android:layout_height="wrap_content"
+                android:text="0:00" />
+
+
+            <TextView
+                android:id="@+id/until7"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Until : " />
+
+            <TextView
+                android:id="@+id/myEndTime7"
+                android:layout_width="70dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="0:00" />
+
+        </LinearLayout>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="70dp" />
+
+        <Button
+            android:id="@+id/cancelBtn5"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Cancel"
+            android:textAllCaps="false" />
+
+    </LinearLayout>
+
+
+</ScrollView>
