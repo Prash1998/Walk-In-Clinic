@@ -1,8 +1,6 @@
-# Walkin Clinic DELIVERABLE 4
+# Walkin Clinic 
 
-This is our implementation of deliverable 4 of the Walkin Clinic app.
-***Please note this is NOT our official report. The report will be submitted on brightspace.***
-
+This is the implementation of  the Walkin Clinic app.
 ## Team Members
 | Name | Student Number | Tasks | 
 | --- | --- | --- |
